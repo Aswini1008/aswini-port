@@ -70,7 +70,8 @@ const Hero = () => {
               duration={500}
               className="cursor-pointer rounded-full border border-gray-600 px-8 py-3 text-base font-medium text-gray-300 transition hover:bg-gray-800/50"
             >
-              View Projects
+            
+             Stalk My Work
             </Link>
           </motion.div>
 
