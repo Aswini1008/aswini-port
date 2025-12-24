@@ -1,63 +1,74 @@
-
 import { motion } from "framer-motion";
 import { Briefcase, GraduationCap } from "lucide-react";
 
 const experienceData = [
   {
-    title: "Integral Coach Factory (ICF)",
-    subtitle: "Electrical & Technical Internship",
-    description: "Worked on electric circuits and wiring systems, gaining practical engineering exposure.",
-    date: "Jun 2024 - Jul 2024",
-    type: "internship",
+    title: "Meta Taaraka AI Pvt. Ltd.",
+    subtitle: "AI & Web Development Intern",
+    description:
+      "Worked on AI-powered web applications, contributed to frontend development, and collaborated in real-world product development workflows.",
+    date: "Jun 2024 – Aug 2024",
   },
   {
     title: "BSNL",
     subtitle: "Networking & Telecom Internship",
-    description: "Learned networking fundamentals and telecom infrastructure.",
-    date: "Apr 2024 - May 2024",
-    type: "internship",
+    description:
+      "Gained hands-on exposure to telecom infrastructure, networking fundamentals, and operational workflows.",
+    date: "Apr 2024 – May 2024",
   },
   {
     title: "Test Yatra",
     subtitle: "Software Testing Internship",
-    description: "Understood testing processes and quality assurance basics.",
-    date: "Feb 2024 - Mar 2024",
-    type: "internship",
+    description:
+      "Learned software testing life cycle, manual testing techniques, and quality assurance fundamentals.",
+    date: "Feb 2024 – Mar 2024",
   },
 ];
 
 const educationData = [
   {
-    title: "B.Tech, ECE",
+    title: "B.Tech – Electronics & Communication Engineering",
     subtitle: "Panimalar Engineering College",
-    description: "Focusing on electronics, communication, and software engineering principles.",
-    date: "2023 - 2027",
+    description:
+      "Studying electronics, communication systems, and software engineering fundamentals.",
+    date: "2023 – 2027",
   },
   {
-    title: "HSC",
-    subtitle: "SBOA MHSS",
-    description: "Completed higher secondary education with a focus on science and mathematics.",
-    date: "2022 - 2023",
+    title: "Higher Secondary (HSC)",
+    subtitle: "Holy Infant Jesus Matriculation Higher Secondary School",
+    description:
+      "Completed higher secondary education with a strong foundation in science and mathematics.",
+    date: "2022 – 2023",
   },
 ];
 
-const TimelineItem = ({ data, icon }) => (
+const TimelineItem = ({ item, icon }) => (
   <motion.div
-    initial={{ opacity: 0, y: 20 }}
+    initial={{ opacity: 0, y: 24 }}
     whileInView={{ opacity: 1, y: 0 }}
-    viewport={{ once: true, amount: 0.5 }}
-    transition={{ duration: 0.6 }}
-    className="relative pl-12 mb-8"
+    viewport={{ once: true }}
+    transition={{ duration: 0.5, ease: "easeOut" }}
+    className="relative pl-12 pb-10"
   >
-    <div className="absolute left-0 top-1 flex items-center justify-center w-8 h-8 rounded-full bg-gray-800 border-2 border-blue-400">
+    {/* Icon */}
+    <div className="absolute left-0 top-1 w-8 h-8 rounded-full bg-slate-800 border border-blue-400 flex items-center justify-center">
       {icon}
     </div>
-    <div className="absolute left-[15px] top-10 h-full w-px bg-gray-700" />
 
-    <p className="text-xs text-gray-400 uppercase tracking-wider">{data.date}</p>
-    <h3 className="text-lg font-semibold text-white mt-1">{data.title}</h3>
-    <h4 className="text-md font-medium text-blue-300">{data.subtitle}</h4>
-    <p className="text-sm text-gray-400 mt-2">{data.description}</p>
+    {/* Line */}
+    <div className="absolute left-[15px] top-10 h-full w-px bg-slate-700" />
+
+    {/* Content */}
+    <p className="text-xs text-slate-400 tracking-wide">{item.date}</p>
+    <h3 className="text-lg font-semibold text-white mt-1">
+      {item.title}
+    </h3>
+    <h4 className="text-sm font-medium text-blue-400">
+      {item.subtitle}
+    </h4>
+    <p className="text-sm text-slate-400 mt-2 leading-relaxed">
+      {item.description}
+    </p>
   </motion.div>
 );
 
@@ -67,38 +78,40 @@ const Experience = () => {
       id="experience"
       className="bg-slate-900 py-24 px-4 sm:px-6 lg:px-8"
     >
-      <div className="max-w-4xl mx-auto grid md:grid-cols-2 gap-16">
-        <div>
-          <h2 className="text-3xl font-bold text-white mb-10 flex items-center gap-3">
-            <Briefcase className="w-8 h-8 text-blue-400" /> Experience (The
-            Serious Stuff)
-          </h2>
-          <div className="relative">
-            {experienceData.map((item, index) => (
-              <TimelineItem
-                key={index}
-                data={item}
-                icon={<Briefcase className="w-4 h-4 text-blue-400" />}
-              />
-            ))}
-          </div>
+      <div className="max-w-3xl mx-auto">
+
+        {/* Education FIRST */}
+        <h2 className="text-3xl font-bold text-white mb-12 flex items-center gap-3">
+          <GraduationCap className="w-8 h-8 text-blue-400" />
+          Education
+        </h2>
+
+        <div className="mb-20">
+          {educationData.map((item, index) => (
+            <TimelineItem
+              key={index}
+              item={item}
+              icon={<GraduationCap className="w-4 h-4 text-blue-400" />}
+            />
+          ))}
         </div>
 
+        {/* Experience BELOW */}
+        <h2 className="text-3xl font-bold text-white mb-12 flex items-center gap-3">
+          <Briefcase className="w-8 h-8 text-blue-400" />
+          Experience
+        </h2>
+
         <div>
-          <h2 className="text-3xl font-bold text-white mb-10 flex items-center gap-3">
-            <GraduationCap className="w-8 h-8 text-blue-400" /> Education (Where I
-            Hang Out)
-          </h2>
-          <div className="relative">
-            {educationData.map((item, index) => (
-              <TimelineItem
-                key={index}
-                data={item}
-                icon={<GraduationCap className="w-4 h-4 text-blue-400" />}
-              />
-            ))}
-          </div>
+          {experienceData.map((item, index) => (
+            <TimelineItem
+              key={index}
+              item={item}
+              icon={<Briefcase className="w-4 h-4 text-blue-400" />}
+            />
+          ))}
         </div>
+
       </div>
     </section>
   );
