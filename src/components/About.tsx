@@ -21,7 +21,7 @@ const skills = [
   {
     title: "Frontend",
     icon: <Layout size={20} />,
-    items: ["HTML", "CSS", "JavaScript", "React","Tailwind CSS"],
+    items: ["HTML", "CSS", "JavaScript", "React", "Tailwind CSS"],
   },
   {
     title: "Backend",
@@ -101,6 +101,20 @@ const About = () => {
               applications that are technically robust, scalable, and
               user-friendly.
             </p>
+
+            {/* ===== Resume Button ===== */}
+            <div className="mt-8 flex justify-center">
+              <a
+                href="/Aswini_Resume.pdf" // 🔁 replace with your exact resume path
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 rounded-full bg-blue-600 px-8 py-3
+                           text-sm font-medium text-white shadow-lg
+                           transition hover:bg-blue-700 hover:shadow-blue-500/40"
+              >
+                View Resume
+              </a>
+            </div>
           </div>
         </motion.div>
 
