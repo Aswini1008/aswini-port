@@ -1,76 +1,91 @@
-import React from 'react';
-import { motion } from 'framer-motion';
+import React from "react";
+import { motion } from "framer-motion";
 import {
   Code2,
   LayoutDashboard,
   Server,
   Wrench,
-} from 'lucide-react';
+} from "lucide-react";
 
 const Skills = () => {
   const skillCategories = [
     {
-      title: 'Programming Languages',
-      icon: <Code2 className="w-5 h-5 text-pink-400" />,
-      skills: ['Java', 'C', 'Python', 'JavaScript'],
+      title: "Programming & Core Languages",
+      icon: <Code2 className="w-5 h-5 text-blue-400" />,
+      skills: ["Java", "C", "Python", "JavaScript (ES6+)"],
     },
     {
-      title: 'Web Technologies',
-      icon: <LayoutDashboard className="w-5 h-5 text-pink-400" />,
-      skills: ['HTML5', 'CSS3', 'React JS', 'Tailwind CSS'],
+      title: "Frontend Engineering",
+      icon: <LayoutDashboard className="w-5 h-5 text-blue-400" />,
+      skills: ["React.js", "HTML5", "CSS3", "Tailwind CSS"],
     },
     {
-      title: 'Backend & Database',
-      icon: <Server className="w-5 h-5 text-pink-400" />,
-      skills: ['Node.js', 'Express.js', 'MySQL', 'MongoDB'],
+      title: "Backend & Database Systems",
+      icon: <Server className="w-5 h-5 text-blue-400" />,
+      skills: ["Node.js", "Express.js", "MySQL", "MongoDB"],
     },
     {
-      title: 'Tools & Platforms',
-      icon: <Wrench className="w-5 h-5 text-pink-400" />,
-      skills: ['Git', 'GitHub', 'Netlify', 'Firebase', 'Cloudinary', 'VS Code', 'Figma'],
+      title: "Tools, Deployment & Workflow",
+      icon: <Wrench className="w-5 h-5 text-blue-400" />,
+      skills: [
+        "Git",
+        "GitHub",
+        "Netlify",
+        "Firebase",
+        "Cloudinary",
+        "VS Code",
+        "Figma",
+      ],
     },
   ];
 
   return (
     <section
       id="skills"
-      className="py-20 bg-gradient-to-b from-slate-800 via-slate-900 to-slate-900 text-white"
+      className="py-24 bg-gradient-to-b from-slate-900 via-slate-950 to-slate-950 text-white"
     >
       <div className="max-w-6xl mx-auto px-4">
-        {/* Title */}
+
+        {/* ===== Title ===== */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
-          className="text-center mb-16"
+          className="text-center mb-20"
         >
-          <h2 className="text-4xl font-bold mb-4 gradient-text">Skills</h2>
-          <p className="text-xl text-slate-300 max-w-2xl mx-auto">
-            My technical stack includes languages, frameworks, tools, and platforms I use to build scalable and efficient applications.
+          <h2 className="text-4xl font-bold mb-4">
+            Technical Expertise
+          </h2>
+
+          <p className="text-lg text-slate-400 max-w-2xl mx-auto">
+            A structured technology stack supporting full-stack application
+            development, backend integration, and production deployment workflows.
           </p>
         </motion.div>
 
-        {/* Skill Cards */}
-        <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-2">
+        {/* ===== Skill Cards ===== */}
+        <div className="grid gap-10 sm:grid-cols-2">
           {skillCategories.map((category, index) => (
             <motion.div
               key={index}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{
-                type: 'spring',
+                type: "spring",
                 damping: 20,
                 stiffness: 100,
-                delay: index * 0.2,
+                delay: index * 0.15,
               }}
               viewport={{ once: true }}
               whileHover={{ scale: 1.02 }}
-              className="rounded-2xl bg-slate-800/40 border border-slate-700 hover:border-pink-500/50 p-6 shadow-xl transition-all duration-300"
+              className="rounded-2xl bg-slate-800/50 border border-slate-700 p-8 shadow-lg transition-all duration-300 hover:border-blue-500/40"
             >
-              <div className="flex items-center gap-2 mb-4">
+              <div className="flex items-center gap-3 mb-6">
                 {category.icon}
-                <h3 className="text-xl font-semibold text-pink-400">{category.title}</h3>
+                <h3 className="text-lg font-semibold text-blue-400">
+                  {category.title}
+                </h3>
               </div>
 
               <div className="flex flex-wrap gap-3">
@@ -78,7 +93,7 @@ const Skills = () => {
                   <motion.span
                     key={i}
                     whileHover={{ scale: 1.05 }}
-                    className="px-4 py-2 rounded-lg bg-slate-700 text-slate-100 text-sm font-medium border border-slate-600 hover:bg-pink-800/40 hover:border-pink-500 transition-all duration-300"
+                    className="px-4 py-2 rounded-lg bg-slate-900 text-slate-200 text-sm font-medium border border-slate-700 hover:border-blue-500 hover:bg-blue-900/20 transition-all duration-300"
                   >
                     {skill}
                   </motion.span>
@@ -87,6 +102,7 @@ const Skills = () => {
             </motion.div>
           ))}
         </div>
+
       </div>
     </section>
   );

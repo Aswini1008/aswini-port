@@ -33,17 +33,17 @@ const Contact = () => {
       });
 
       if (response.ok) {
-        toast({ title: "Message sent successfully ✅" });
+        toast({ title: "Message sent successfully" });
         setFormData({ name: "", email: "", message: "" });
       } else {
         toast({
-          title: "Failed to send message ❌",
+          title: "Failed to send message",
           variant: "destructive",
         });
       }
     } catch {
       toast({
-        title: "Something went wrong ❌",
+        title: "Something went wrong",
         variant: "destructive",
       });
     } finally {
@@ -65,18 +65,25 @@ const Contact = () => {
           viewport={{ once: true }}
           transition={{ duration: 0.7 }}
         >
-          <p className="uppercase tracking-widest text-2xl font-bold text-blue-300 ">
-            Contact
+          <p className="uppercase tracking-widest text-sm font-semibold text-blue-400">
+            Get In Touch
           </p>
 
           <h2 className="mt-4 text-3xl font-bold leading-tight text-white sm:text-4xl">
-            Let’s work together
+            Open to Full-Stack Engineering Opportunities
           </h2>
 
           <p className="mt-6 text-base leading-relaxed text-gray-400 sm:text-lg">
-            Whether you have a project idea, an opportunity, or just want to
-            connect, feel free to reach out. I’m always open to meaningful
-            conversations and collaborations.
+            I am open to collaborating on scalable web applications,
+            contributing to product-driven teams, and exploring
+            full-stack engineering opportunities.  
+            If you have a project, role, or technical discussion in mind,
+            feel free to reach out.
+          </p>
+
+          <p className="mt-4 text-sm text-gray-500">
+            Actively interested in roles involving React.js, Node.js,
+            REST API integration, and backend system development.
           </p>
 
           {/* Social Buttons */}
@@ -94,18 +101,6 @@ const Contact = () => {
             </a>
 
             <a
-              href="https://www.instagram.com/_.aswini._10"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center justify-center gap-2 rounded-full bg-pink-600 px-5 py-2.5
-                         text-sm font-semibold text-white shadow-lg
-                         transition hover:bg-pink-700"
-            >
-              <FaInstagram />
-              Instagram
-            </a>
-
-            <a
               href="https://github.com/Aswini1008"
               target="_blank"
               rel="noopener noreferrer"
@@ -115,6 +110,18 @@ const Contact = () => {
             >
               <FaGithub />
               GitHub
+            </a>
+
+            <a
+              href="https://www.instagram.com/_.aswini._10"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center gap-2 rounded-full bg-pink-600 px-5 py-2.5
+                         text-sm font-semibold text-white shadow-lg
+                         transition hover:bg-pink-700"
+            >
+              <FaInstagram />
+              Instagram
             </a>
           </div>
         </motion.div>
@@ -131,7 +138,7 @@ const Contact = () => {
           <form onSubmit={handleSubmit} className="space-y-6">
             <Input
               name="name"
-              placeholder="Your name"
+              placeholder="Full Name"
               value={formData.name}
               onChange={handleChange}
               required
@@ -141,7 +148,7 @@ const Contact = () => {
             <Input
               name="email"
               type="email"
-              placeholder="Your email"
+              placeholder="Professional Email"
               value={formData.email}
               onChange={handleChange}
               required
@@ -151,7 +158,7 @@ const Contact = () => {
             <Textarea
               name="message"
               rows={5}
-              placeholder="Tell me about your project or message..."
+              placeholder="Briefly describe your project, role, or message..."
               value={formData.message}
               onChange={handleChange}
               required
@@ -165,7 +172,7 @@ const Contact = () => {
                          bg-blue-600 hover:bg-blue-700
                          transition-all duration-300 shadow-lg"
             >
-              {isSubmitting ? "Sending..." : "Send Message"}
+              {isSubmitting ? "Sending Message..." : "Submit Inquiry"}
             </Button>
           </form>
         </motion.div>

@@ -5,7 +5,7 @@ import {
   Server,
   Database,
   Wrench,
-  Brain,
+  Rocket,
 } from "lucide-react";
 
 /* =======================
@@ -14,34 +14,65 @@ import {
 
 const skills = [
   {
-    title: "Languages",
-    icon: <Code2 size={20} />,
-    items: ["Java", "Python"],
-  },
-  {
-    title: "Frontend",
+    title: "Frontend Engineering",
     icon: <Layout size={20} />,
-    items: ["HTML", "CSS", "JavaScript", "React", "Tailwind CSS"],
+    items: [
+      "React.js",
+      "JavaScript (ES6+)",
+      "Tailwind CSS",
+      "HTML5",
+      "CSS3",
+    ],
   },
   {
-    title: "Backend",
+    title: "Backend Development",
     icon: <Server size={20} />,
-    items: ["Java", "Node.js", "MongoDB"],
+    items: [
+      "Node.js",
+      "Express.js",
+      "Java",
+      "REST API Integration",
+    ],
   },
   {
-    title: "Database",
+    title: "Database Systems",
     icon: <Database size={20} />,
-    items: ["MySQL"],
+    items: [
+      "MongoDB",
+      "MySQL",
+      "Schema Design",
+      "CRUD Operations",
+    ],
   },
   {
-    title: "Tools & Platforms",
+    title: "Programming Languages",
+    icon: <Code2 size={20} />,
+    items: [
+      "Java",
+      "JavaScript",
+      "Python",
+    ],
+  },
+  {
+    title: "Tools & Deployment",
     icon: <Wrench size={20} />,
-    items: ["Git", "GitHub", "Firebase", "Figma"],
+    items: [
+      "Git",
+      "GitHub",
+      "Firebase",
+      "Vercel",
+      "Figma",
+    ],
   },
   {
-    title: "Interests",
-    icon: <Brain size={20} />,
-    items: ["AI & Intelligent Systems", "Problem Solving"],
+    title: "Production Readiness",
+    icon: <Rocket size={20} />,
+    items: [
+      "Responsive Architecture",
+      "Performance Optimization",
+      "Clean Folder Structure",
+      "Environment Configuration",
+    ],
   },
 ];
 
@@ -88,24 +119,31 @@ const About = () => {
 
           <div className="bg-gray-800/60 border border-gray-700/50 backdrop-blur-md rounded-2xl p-8 shadow-lg max-w-3xl mx-auto">
             <p className="text-gray-300 text-lg leading-relaxed">
-              I am an engineering student and a passionate{" "}
+              I am a{" "}
               <span className="text-blue-400 font-medium">
-                Full-Stack Developer
+                Full-Stack Web Engineer
               </span>{" "}
-              with a strong interest in backend systems, scalable architectures,
-              and AI-powered applications.
+              specializing in building scalable, responsive, and production-ready
+              web applications using modern frontend and backend technologies.
             </p>
 
             <p className="mt-4 text-gray-300 text-lg leading-relaxed">
-              I focus on writing clean, maintainable code and building
-              applications that are technically robust, scalable, and
-              user-friendly.
+              My work involves designing clean component architectures,
+              integrating RESTful APIs, implementing authentication systems,
+              managing databases, and deploying applications with performance
+              optimization and maintainability in mind.
+            </p>
+
+            <p className="mt-4 text-gray-400 text-base leading-relaxed">
+              I focus on writing structured, reusable code and building systems
+              that are robust, efficient, and aligned with real-world
+              engineering standards.
             </p>
 
             {/* ===== Resume Button ===== */}
             <div className="mt-8 flex justify-center">
               <a
-                href="/Aswini_Resume.pdf" // 🔁 replace with your exact resume path
+                href="/Aswini_Resume.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 rounded-full bg-blue-600 px-8 py-3
@@ -126,7 +164,7 @@ const About = () => {
           viewport={{ once: true }}
           className="text-2xl sm:text-3xl font-semibold text-white text-center mb-12"
         >
-          Technical Skills
+          Core Technical Expertise
         </motion.h3>
 
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">

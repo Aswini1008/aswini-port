@@ -1,39 +1,39 @@
 import { motion } from "framer-motion";
 import {
   FaCode,
-  FaBolt,
-  FaRobot,
-  FaPaintBrush,
+  FaServer,
+  FaDatabase,
+  FaRocket,
 } from "react-icons/fa";
 
 /* =======================
-   SERVICES DATA
+   CAPABILITIES DATA
 ======================= */
 
 const services = [
   {
     icon: FaCode,
-    title: "Frontend Web Development",
+    title: "Frontend Architecture",
     description:
-      "I build responsive and interactive web interfaces using HTML, CSS, JavaScript, React, and Tailwind CSS with a strong focus on usability and clean design.",
+      "Designing modular, scalable, and responsive user interfaces using React.js and Tailwind CSS with a focus on reusable components and clean UI structure.",
   },
   {
-    icon: FaBolt,
-    title: "Website Hosting & Maintenance",
+    icon: FaServer,
+    title: "Backend Development & API Integration",
     description:
-      "I deploy websites, manage hosting, handle updates, fix issues, and ensure websites remain stable, secure, and up to date.",
+      "Building and integrating RESTful APIs using Node.js and Java, implementing structured data flow, authentication logic, and maintainable backend architecture.",
   },
   {
-    icon: FaPaintBrush,
-    title: "UI / UX Design Implementation",
+    icon: FaDatabase,
+    title: "Database Design & Data Management",
     description:
-      "I design clean, user-friendly interfaces using Figma and accurately convert designs into functional, pixel-perfect web layouts.",
+      "Designing structured schemas using MongoDB and MySQL, implementing CRUD operations, and ensuring reliable data handling within full-stack applications.",
   },
   {
-    icon: FaRobot,
-    title: "AI & Intelligent Systems (Learning)",
+    icon: FaRocket,
+    title: "Deployment & Production Optimization",
     description:
-      "I explore AI concepts and experiment with basic intelligent features while continuously learning and improving my understanding of smart systems.",
+      "Deploying applications to production environments, optimizing performance, managing environment configurations, and ensuring responsive, SEO-aware builds.",
   },
 ];
 
@@ -72,17 +72,18 @@ const Services = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
-          className="text-3xl sm:text-4xl font-bold text-white mb-3"
+          className="text-3xl sm:text-4xl font-bold text-white mb-4"
         >
-          What I Offer
+          Core Engineering Capabilities
         </motion.h2>
 
-        <p className="text-blue-300 text-sm tracking-widest mb-14">
-          SERVICES
+        <p className="text-gray-400 max-w-2xl mx-auto mb-16">
+          Technical competencies focused on building scalable full-stack
+          applications aligned with modern development standards.
         </p>
 
-        {/* ===== Service Cards ===== */}
-        <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
+        {/* ===== Capability Cards ===== */}
+        <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
           {services.map((service, index) => (
             <motion.div
               key={service.title}
@@ -91,18 +92,18 @@ const Services = () => {
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true, amount: 0.4 }}
-              className="group bg-gray-800/50 border border-gray-700/50 backdrop-blur-sm
-                         rounded-2xl p-7 shadow-lg flex flex-col items-center text-center
+              className="group bg-slate-800/50 border border-slate-700/50 backdrop-blur-sm
+                         rounded-2xl p-8 shadow-lg flex flex-col items-center text-center
                          transition-all duration-300 hover:-translate-y-2
-                         hover:shadow-blue-500/20"
+                         hover:shadow-blue-500/10"
             >
-              <div className="mb-5 flex items-center justify-center rounded-full
+              <div className="mb-6 flex items-center justify-center rounded-full
                               bg-blue-500/10 p-4 text-blue-400
                               transition group-hover:bg-blue-500/20">
-                <service.icon className="w-8 h-8" />
+                <service.icon className="w-7 h-7" />
               </div>
 
-              <h3 className="text-lg font-semibold text-white mb-3">
+              <h3 className="text-lg font-semibold text-white mb-4">
                 {service.title}
               </h3>
 
