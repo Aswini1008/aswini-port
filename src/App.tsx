@@ -11,7 +11,7 @@ import { Toaster } from "@/components/ui/toaster";
 
 const App = () => {
   return (
-    <main className="bg-slate-900 antialiased">
+    <main className="overflow-x-clip bg-slate-900 antialiased">
       <Toaster />
       <Header />
       <Hero />

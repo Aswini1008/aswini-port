@@ -56,7 +56,7 @@ const Projects = () => {
       <div className="max-w-6xl mx-auto">
         {/* Header */}
         <div className="text-center mb-20">
-          <h2 className="text-4xl md:text-5xl font-bold text-white">
+          <h2 className="text-3xl font-bold text-white sm:text-4xl md:text-5xl">
             Things I’ve Built
           </h2>
           <p className="mt-4 text-lg text-gray-400 max-w-2xl mx-auto">
@@ -65,7 +65,7 @@ const Projects = () => {
         </div>
 
         {/* Projects List */}
-        <div className="space-y-24">
+        <div className="space-y-20 sm:space-y-24">
           {projects.map((project, index) => (
             <motion.div
               key={index}
@@ -74,13 +74,13 @@ const Projects = () => {
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true, amount: 0.2 }}
-              className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center"
+              className="grid grid-cols-1 items-center gap-8 lg:grid-cols-2 lg:gap-10"
             >
               {/* Image */}
               <motion.div
                 whileHover={{ scale: 1.04 }}
                 transition={{ duration: 0.3 }}
-                className="relative rounded-xl overflow-hidden border border-gray-700 shadow-2xl"
+                className="relative aspect-[16/10] overflow-hidden rounded-xl border border-gray-700 shadow-2xl"
               >
                 <img
                   src={project.image}
@@ -125,12 +125,12 @@ const Projects = () => {
                   ))}
                 </div>
 
-                <div className="flex gap-4">
+                <div className="flex flex-wrap gap-3">
                   <a
                     href={project.liveLink}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 rounded-full bg-blue-600 px-6 py-3 text-sm font-semibold text-white hover:bg-blue-700 transition"
+                    className="inline-flex w-full items-center justify-center gap-2 rounded-full bg-blue-600 px-6 py-3 text-sm font-semibold text-white transition hover:bg-blue-700 sm:w-auto"
                   >
                     <ExternalLink className="w-4 h-4" />
                     Live Demo
@@ -140,7 +140,7 @@ const Projects = () => {
                     href={project.githubLink}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 rounded-full border border-gray-700 px-6 py-3 text-sm font-semibold text-gray-300 hover:bg-gray-800 transition"
+                    className="inline-flex w-full items-center justify-center gap-2 rounded-full border border-gray-700 px-6 py-3 text-sm font-semibold text-gray-300 transition hover:bg-gray-800 sm:w-auto"
                   >
                     <Github className="w-4 h-4" />
                     GitHub

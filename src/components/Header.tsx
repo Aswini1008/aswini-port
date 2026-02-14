@@ -25,6 +25,25 @@ const Header = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  useEffect(() => {
+    document.body.style.overflow = isOpen ? "hidden" : "";
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [isOpen]);
+
+  useEffect(() => {
+    const mediaQuery = window.matchMedia("(min-width: 1024px)");
+    const handleChange = (event: MediaQueryListEvent) => {
+      if (event.matches) {
+        setIsOpen(false);
+      }
+    };
+
+    mediaQuery.addEventListener("change", handleChange);
+    return () => mediaQuery.removeEventListener("change", handleChange);
+  }, []);
+
   return (
     <header
       className={`fixed top-0 left-0 z-50 w-full transition-all duration-300 ${
@@ -33,27 +52,29 @@ const Header = () => {
           : "bg-transparent"
       }`}
     >
-      <nav className="container mx-auto flex max-w-6xl items-center justify-between px-4 py-4">
+      <nav className="mx-auto flex h-20 w-full max-w-6xl items-center justify-between px-4 sm:px-6">
         <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }}>
           <Link
             to="home"
             smooth={true}
             duration={500}
-            className="text-xl font-bold text-white cursor-pointer"
+            offset={-80}
+            onClick={() => setIsOpen(false)}
+            className="cursor-pointer text-lg font-bold text-white sm:text-xl"
           >
             <span className="text-blue-400">A</span>swini.
           </Link>
         </motion.div>
 
         {/* Desktop Nav */}
-        <ul className="hidden items-center space-x-6 md:flex">
+        <ul className="hidden items-center gap-6 lg:flex">
           {navLinks.map((link) => (
             <li key={link.name}>
               <Link
                 to={link.to}
                 smooth={true}
                 duration={500}
-                offset={-60}
+                offset={-80}
                 spy={true}
                 activeClass="text-blue-400 font-semibold"
                 className="cursor-pointer text-sm text-gray-300 transition-colors hover:text-blue-300"
@@ -65,8 +86,14 @@ const Header = () => {
         </ul>
 
         {/* Mobile Nav Toggle */}
-        <div className="md:hidden">
-          <button onClick={() => setIsOpen(!isOpen)} className="text-white">
+        <div className="lg:hidden">
+          <button
+            onClick={() => setIsOpen(!isOpen)}
+            className="rounded-md p-2 text-white transition hover:bg-slate-800/60"
+            aria-label={isOpen ? "Close navigation menu" : "Open navigation menu"}
+            aria-expanded={isOpen}
+            aria-controls="mobile-navigation"
+          >
             {isOpen ? <X /> : <Menu />}
           </button>
         </div>
@@ -76,21 +103,22 @@ const Header = () => {
       <AnimatePresence>
         {isOpen && (
           <motion.div
+            id="mobile-navigation"
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
-            className="overflow-hidden bg-slate-900/95 md:hidden"
+            className="overflow-hidden border-t border-slate-800 bg-slate-900/95 backdrop-blur-lg lg:hidden"
           >
-            <ul className="flex flex-col items-center space-y-4 py-6">
+            <ul className="mx-auto flex w-full max-w-6xl flex-col px-4 py-4 sm:px-6">
               {navLinks.map((link) => (
-                <li key={link.name}>
+                <li key={link.name} className="border-b border-slate-800/70 last:border-b-0">
                   <Link
                     to={link.to}
                     smooth={true}
                     duration={500}
-                    offset={-60}
+                    offset={-80}
                     onClick={() => setIsOpen(false)}
-                    className="cursor-pointer text-lg text-gray-200 transition-colors hover:text-blue-400"
+                    className="block py-3 text-base text-gray-200 transition-colors hover:text-blue-400"
                   >
                     {link.name}
                   </Link>

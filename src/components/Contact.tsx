@@ -56,7 +56,7 @@ const Contact = () => {
       id="contact"
       className="w-full bg-slate-900 py-24 px-4 sm:px-6 lg:px-8"
     >
-      <div className="mx-auto max-w-5xl grid gap-16 md:grid-cols-2 items-center">
+      <div className="mx-auto grid max-w-5xl items-center gap-12 md:grid-cols-2 lg:gap-16">
 
         {/* ===== LEFT CONTENT ===== */}
         <motion.div
@@ -69,23 +69,23 @@ const Contact = () => {
             Contact
           </p>
 
-          <h2 className="mt-4 text-3xl sm:text-4xl font-bold text-white leading-tight">
+          <h2 className="mt-4 text-3xl font-bold leading-tight text-white sm:text-4xl">
             Let’s work together
           </h2>
 
-          <p className="mt-6 text-gray-400 text-lg leading-relaxed">
+          <p className="mt-6 text-base leading-relaxed text-gray-400 sm:text-lg">
             Whether you have a project idea, an opportunity, or just want to
             connect, feel free to reach out. I’m always open to meaningful
             conversations and collaborations.
           </p>
 
           {/* Social Buttons */}
-          <div className="mt-10 flex gap-4">
+          <div className="mt-10 flex flex-wrap gap-3">
             <a
               href="https://www.linkedin.com/in/aswini-sm-97292629a"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-2 rounded-full bg-blue-600 px-6 py-3
+              className="inline-flex items-center justify-center gap-2 rounded-full bg-blue-600 px-5 py-2.5
                          text-sm font-semibold text-white shadow-lg
                          transition hover:bg-blue-700"
             >
@@ -97,7 +97,7 @@ const Contact = () => {
               href="https://www.instagram.com/_.aswini._10"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-2 rounded-full bg-pink-600 px-6 py-3
+              className="inline-flex items-center justify-center gap-2 rounded-full bg-pink-600 px-5 py-2.5
                          text-sm font-semibold text-white shadow-lg
                          transition hover:bg-pink-700"
             >
@@ -109,8 +109,8 @@ const Contact = () => {
               href="https://github.com/Aswini1008"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-2 rounded-full border border-gray-700
-                         px-6 py-3 text-sm font-semibold text-gray-300
+              className="inline-flex items-center justify-center gap-2 rounded-full border border-gray-700
+                         px-5 py-2.5 text-sm font-semibold text-gray-300
                          transition hover:bg-gray-800/60"
             >
               <FaGithub />
@@ -126,7 +126,7 @@ const Contact = () => {
           viewport={{ once: true }}
           transition={{ duration: 0.7, delay: 0.2 }}
           className="rounded-2xl border border-gray-700 bg-gray-800/50
-                     p-8 shadow-lg backdrop-blur-sm"
+                     p-6 shadow-lg backdrop-blur-sm sm:p-8"
         >
           <form onSubmit={handleSubmit} className="space-y-6">
             <Input

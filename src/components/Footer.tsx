@@ -7,7 +7,7 @@ const Footer = () => {
       {/* Top Divider */}
       <div className="absolute top-0 left-0 w-full h-px bg-gray-800" />
 
-      <div className="max-w-6xl mx-auto py-12 flex flex-col gap-8 sm:flex-row sm:items-center sm:justify-between">
+      <div className="mx-auto flex max-w-6xl flex-col gap-8 py-12 sm:flex-row sm:items-center sm:justify-between">
         
         {/* Left */}
         <motion.div
@@ -32,7 +32,7 @@ const Footer = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.1 }}
-          className="flex justify-center gap-6 text-sm"
+          className="flex flex-wrap justify-center gap-4 text-sm sm:gap-6"
         >
           <a
             href="/Aswini_Resume.pdf" // 🔁 replace if your resume path differs
