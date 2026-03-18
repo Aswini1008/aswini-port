@@ -33,7 +33,7 @@ const Header = () => {
 
   useEffect(() => {
     const mediaQuery = window.matchMedia("(min-width: 1024px)");
-    const handleChange = (event: MediaQueryListEvent) => {
+    const handleChange = (event) => {
       if (event.matches) {
         setIsOpen(false);
       }
@@ -63,7 +63,7 @@ const Header = () => {
             onClick={() => setIsOpen(false)}
             className="cursor-pointer text-lg font-semibold tracking-wide text-white sm:text-xl"
           >
-            Aswini  <span className="text-blue-400">SM</span> 
+            Aswini <span className="text-blue-400">SM</span>
           </Link>
         </motion.div>
 
@@ -85,17 +85,15 @@ const Header = () => {
             </li>
           ))}
 
-          {/* CTA Button */}
+          {/* 🔥 DOWNLOAD RESUME BUTTON */}
           <li>
-            <Link
-              to="contact"
-              smooth={true}
-              duration={500}
-              offset={-80}
-              className="ml-4 rounded-full bg-blue-600 px-5 py-2 text-sm font-semibold text-white transition-all duration-300 hover:bg-blue-700 shadow-md"
+            <a
+              href="/Aswini_SM_Resume.pdf"
+              download
+              className="ml-4 rounded-full bg-blue-600 px-5 py-2 text-sm font-semibold text-white transition-all duration-300 hover:bg-blue-700 shadow-md hover:scale-105"
             >
-              Hire Me
-            </Link>
+              Download Resume
+            </a>
           </li>
         </ul>
 
@@ -104,9 +102,6 @@ const Header = () => {
           <button
             onClick={() => setIsOpen(!isOpen)}
             className="rounded-md p-2 text-white transition hover:bg-slate-800/60"
-            aria-label={isOpen ? "Close navigation menu" : "Open navigation menu"}
-            aria-expanded={isOpen}
-            aria-controls="mobile-navigation"
           >
             {isOpen ? <X /> : <Menu />}
           </button>
@@ -117,7 +112,6 @@ const Header = () => {
       <AnimatePresence>
         {isOpen && (
           <motion.div
-            id="mobile-navigation"
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
@@ -135,25 +129,22 @@ const Header = () => {
                     duration={500}
                     offset={-80}
                     onClick={() => setIsOpen(false)}
-                    className="block py-4 text-base font-medium text-gray-200 transition-colors hover:text-blue-400"
+                    className="block py-4 text-base font-medium text-gray-200 hover:text-blue-400"
                   >
                     {link.name}
                   </Link>
                 </li>
               ))}
 
-              {/* Mobile CTA */}
+              {/* 🔥 MOBILE DOWNLOAD RESUME */}
               <li className="mt-4">
-                <Link
-                  to="contact"
-                  smooth={true}
-                  duration={500}
-                  offset={-80}
-                  onClick={() => setIsOpen(false)}
-                  className="block w-full rounded-lg bg-blue-600 px-4 py-3 text-center text-sm font-semibold text-white transition hover:bg-blue-700"
+                <a
+                  href="/Aswini_SM_Resume.pdf"
+                  download
+                  className="block w-full rounded-lg bg-blue-600 px-4 py-3 text-center text-sm font-semibold text-white hover:bg-blue-700"
                 >
-                  Hire Me
-                </Link>
+                  Download Resume
+                </a>
               </li>
             </ul>
           </motion.div>
