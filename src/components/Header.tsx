@@ -6,7 +6,7 @@ import { Menu, X } from "lucide-react";
 const navLinks = [
   { name: "Home", to: "home" },
   { name: "About", to: "about" },
-  { name: "Capabilities", to: "services" },
+  { name: "Skills", to: "skills" },
   { name: "Projects", to: "projects" },
   { name: "Experience", to: "experience" },
   { name: "Contact", to: "contact" },
@@ -63,7 +63,7 @@ const Header = () => {
             onClick={() => setIsOpen(false)}
             className="cursor-pointer text-lg font-semibold tracking-wide text-white sm:text-xl"
           >
-            <span className="text-blue-400">SM</span> Aswini
+            Aswini  <span className="text-blue-400">SM</span> 
           </Link>
         </motion.div>
 

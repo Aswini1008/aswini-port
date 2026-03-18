@@ -58,7 +58,7 @@ const Projects = () => {
         {/* ===== HEADER ===== */}
         <div className="text-center mb-24">
           <h2 className="text-3xl font-bold text-white sm:text-4xl md:text-5xl">
-            Selected Engineering Projects
+             Projects
           </h2>
           <p className="mt-4 text-lg text-gray-400 max-w-2xl mx-auto">
             Production-oriented applications demonstrating full-stack development,
