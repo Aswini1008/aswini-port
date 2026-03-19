@@ -1,4 +1,3 @@
-import React from "react";
 import { motion } from "framer-motion";
 import {
   Code2,
@@ -10,97 +9,97 @@ import {
 const Skills = () => {
   const skillCategories = [
     {
-      title: "Programming & Core Languages",
-      icon: <Code2 className="w-5 h-5 text-blue-400" />,
-      skills: ["Java", "C", "Python", "JavaScript (ES6+)"],
+      title: "Programming",
+      icon: <Code2 className="w-5 h-5" />,
+      skills: ["Java", "C", "Python", "JavaScript"],
     },
     {
-      title: "Frontend Engineering",
-      icon: <LayoutDashboard className="w-5 h-5 text-blue-400" />,
-      skills: ["React.js", "HTML5", "CSS3", "Tailwind CSS"],
+      title: "Frontend",
+      icon: <LayoutDashboard className="w-5 h-5" />,
+      skills: ["React.js", "HTML5", "CSS3", "Tailwind"],
     },
     {
-      title: "Backend & Database Systems",
-      icon: <Server className="w-5 h-5 text-blue-400" />,
-      skills: ["Node.js", "Express.js", "MySQL", "MongoDB"],
+      title: "Backend",
+      icon: <Server className="w-5 h-5" />,
+      skills: ["Node.js", "Express.js", "MongoDB", "MySQL"],
     },
     {
-      title: "Tools, Deployment & Workflow",
-      icon: <Wrench className="w-5 h-5 text-blue-400" />,
-      skills: [
-        "Git",
-        "GitHub",
-        "Netlify",
-        "Firebase",
-        "Cloudinary",
-        "VS Code",
-        "Figma",
-      ],
+      title: "Tools",
+      icon: <Wrench className="w-5 h-5" />,
+      skills: ["Git", "GitHub", "Netlify", "Firebase", "Figma"],
     },
   ];
 
   return (
     <section
       id="skills"
-      className="py-24 bg-gradient-to-b from-slate-900 via-slate-950 to-slate-950 text-white"
+      className="relative py-28 bg-slate-950 text-white overflow-hidden"
     >
-      <div className="max-w-6xl mx-auto px-4">
+      {/* ===== BACKGROUND GLOW ===== */}
+      <div className="absolute top-0 left-0 w-full h-full -z-10">
+        <div className="absolute w-72 h-72 bg-blue-500/20 blur-3xl top-10 left-10" />
+        <div className="absolute w-72 h-72 bg-purple-500/20 blur-3xl bottom-10 right-10" />
+      </div>
 
-        {/* ===== Title ===== */}
+      <div className="max-w-6xl mx-auto px-6">
+
+        {/* ===== TITLE ===== */}
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          viewport={{ once: true }}
           className="text-center mb-20"
         >
-          <h2 className="text-4xl font-bold mb-4">
-            Technical Expertise
+          <h2 className="text-4xl font-bold">
+            Technical Skills
           </h2>
 
-          <p className="text-lg text-slate-400 max-w-2xl mx-auto">
-            A structured technology stack supporting full-stack application
-            development, backend integration, and production deployment workflows.
+          <p className="text-gray-400 mt-4 max-w-xl mx-auto">
+            A curated set of technologies I use to design, build, and deploy
+            scalable full-stack applications.
           </p>
         </motion.div>
 
-        {/* ===== Skill Cards ===== */}
-        <div className="grid gap-10 sm:grid-cols-2">
+        {/* ===== GRID ===== */}
+        <div className="grid gap-8 sm:grid-cols-2">
+
           {skillCategories.map((category, index) => (
             <motion.div
               key={index}
-              initial={{ opacity: 0, y: 30 }}
+              initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{
-                type: "spring",
-                damping: 20,
-                stiffness: 100,
-                delay: index * 0.15,
-              }}
-              viewport={{ once: true }}
-              whileHover={{ scale: 1.02 }}
-              className="rounded-2xl bg-slate-800/50 border border-slate-700 p-8 shadow-lg transition-all duration-300 hover:border-blue-500/40"
+              transition={{ delay: index * 0.15 }}
+              whileHover={{ scale: 1.03 }}
+              className="relative group rounded-2xl border border-slate-800 bg-slate-900/60 backdrop-blur-xl p-8 overflow-hidden"
             >
-              <div className="flex items-center gap-3 mb-6">
+              {/* HOVER GLOW */}
+              <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition duration-500">
+                <div className="absolute inset-0 bg-gradient-to-r from-blue-500/10 via-purple-500/10 to-transparent" />
+              </div>
+
+              {/* HEADER */}
+              <div className="flex items-center gap-3 mb-6 text-blue-400">
                 {category.icon}
-                <h3 className="text-lg font-semibold text-blue-400">
+                <h3 className="text-lg font-semibold">
                   {category.title}
                 </h3>
               </div>
 
+              {/* SKILLS */}
               <div className="flex flex-wrap gap-3">
                 {category.skills.map((skill, i) => (
                   <motion.span
                     key={i}
-                    whileHover={{ scale: 1.05 }}
-                    className="px-4 py-2 rounded-lg bg-slate-900 text-slate-200 text-sm font-medium border border-slate-700 hover:border-blue-500 hover:bg-blue-900/20 transition-all duration-300"
+                    whileHover={{ scale: 1.08 }}
+                    className="px-4 py-2 text-sm rounded-lg bg-slate-800 border border-slate-700 text-gray-300 transition hover:border-blue-500 hover:text-white"
                   >
                     {skill}
                   </motion.span>
                 ))}
               </div>
+
             </motion.div>
           ))}
+
         </div>
 
       </div>
