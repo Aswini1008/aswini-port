@@ -13,12 +13,12 @@ import { Toaster } from "@/components/ui/toaster";
 
 const App = () => {
   return (
-    <main className="overflow-x-clip bg-slate-900 antialiased">
+    <main className="min-h-screen w-full overflow-x-hidden bg-slate-900 antialiased">
       <Toaster />
       <Header />
       <Hero />
       <About />
-   <Skills/>
+      <Skills />
       <Projects />
       <Experience />
       <Contact />

@@ -3,6 +3,10 @@
 @tailwind components;
 @tailwind utilities;
 
+* {
+  box-sizing: border-box;
+}
+
 html,
 body,
 #root {
@@ -12,7 +16,10 @@ body,
 }
 
 body {
+  margin: 0;
   min-height: 100vh;
+  overflow-x: hidden;
+  background-color: #020617;
 }
 
 img {
@@ -20,10 +27,19 @@ img {
   height: auto;
 }
 
+canvas {
+  display: block;
+}
+
 html {
   scroll-behavior: smooth;
   scroll-padding-top: 5rem;
 }
+
+section {
+  scroll-margin-top: 5rem;
+}
+
 .gradient-text {
-  @apply bg-gradient-to-r from-pink-400 via-pink-300 to-pink-500 text-transparent bg-clip-text;
+  @apply bg-gradient-to-r from-pink-400 via-pink-300 to-pink-500 bg-clip-text text-transparent;
 }
