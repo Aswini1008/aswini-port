@@ -53,7 +53,7 @@ const educationData = [
     title: "Higher Secondary Education (12th)",
     college: "Holy Infant Jesus School",
     date: "2022 – 2023",
-    stat: "71%",
+    stat: "86.66%",
     extra: "",
   },
 ];
